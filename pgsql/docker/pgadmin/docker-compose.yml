@@ -1,0 +1,23 @@
+services:
+  pgadmin:
+    image: elestio/pgadmin:latest
+    container_name: pgadmin
+    restart: unless-stopped
+    ports:
+      - "5050:8080"
+    env_file:
+      - ../../env/.env.shared
+      - ../../env/.env.dev
+      - ../../env/.env.secrets
+    volumes:
+      - pgadmin_volume:/var/lib/pgadmin:rw
+    networks:
+      - project_network
+
+volumes:
+  pgadmin_volume:
+    driver: local
+
+networks:
+  project_network:
+    external: true
