@@ -25,19 +25,10 @@ services:
       - ./postgres.conf:/etc/postgresql/postgresql.conf:ro
       - ./init:/docker-entrypoint-initdb.d:ro
 
-    command:
-      [
-        "postgres",
-        "-c", "config_file=/etc/postgresql/postgresql.conf",
-        "-c", "log_statement=${POSTGRES_LOG_STATEMENT:-none}",
-        "-c", "log_min_duration_statement=${POSTGRES_LOG_MIN_DURATION:-1000}",
-        "-c", "max_connections=${POSTGRES_MAX_CONNECTIONS:-200}",
-        "-c", "log_connections=on",
-        "-c", "log_disconnections=on"
-      ]
+    command: [ "postgres", "-c", "config_file=/etc/postgresql/postgresql.conf", "-c", "log_statement=${POSTGRES_LOG_STATEMENT:-none}", "-c", "log_min_duration_statement=${POSTGRES_LOG_MIN_DURATION:-1000}", "-c", "max_connections=${POSTGRES_MAX_CONNECTIONS:-200}", "-c", "log_connections=on", "-c", "log_disconnections=on" ]
 
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      test: [ "CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -71,6 +62,7 @@ services:
 networks:
   project_network:
     driver: bridge
+
 #    ipam:
 #      config:
 #        - subnet: 172.20.0.0/16
