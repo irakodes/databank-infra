@@ -39,6 +39,7 @@ project-root/
 ### Environment Configuration
 
 1. Copy the secrets template:
+
    ```bash
    cp env/.env.secrets env/.env.secrets.local
    ```
@@ -61,11 +62,10 @@ cd docker/pgadmin
 docker-compose up -d
 ```
 
-Access pgAdmin at: http://localhost:5050
+Access pgAdmin at: <http://localhost:5050>
 
-### Running Both Services
+### Running Both Services a root docker-compose file or use
 
-Create a root docker-compose file or use:
 ```bash
 docker-compose -f docker/postgres/docker-compose.yml -f docker/pgadmin/docker-compose.yml up -d
 ```
@@ -73,6 +73,7 @@ docker-compose -f docker/postgres/docker-compose.yml -f docker/pgadmin/docker-co
 ## Database Initialization
 
 Init scripts in `docker/postgres/init/` run automatically when the database is first created:
+
 - `01-extensions.sql`: Installs PostgreSQL extensions
 - `02-roles.sql`: Creates database roles and permissions
 

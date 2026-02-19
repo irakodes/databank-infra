@@ -1,0 +1,12 @@
+﻿id,name,accountNumber,shortName,type
+1001,Rwanda Enery Group,1065277900542,REG,Electricity
+1002,Water & Sanitation Corporation Group,1052954942456,WASAC Group,Water
+1003,MTN Rwanda,1019391232970,MTN,Airtime
+1004,Airtel Rwanda,1029739030822,Airtel,Airtime
+1005,CanalPlus,1060221826830,Canal+,Fiber
+1006,MTN Rwanda,1028146973951,MTN,Fiber
+1007,CanalPlus,1090080581332,Canal+,Cable TV
+1008,Iwacu Heza,1073461270089,Iwacu,House Help
+1009,Iwacu Heza,1024768491075,Iwacu,Garbage Collection
+1010,Socièté de Soins Municipal,1037906364756,SSM,Garbage Collection
+1011,WAKA Sports,1018462643555,WAKA,Gym
