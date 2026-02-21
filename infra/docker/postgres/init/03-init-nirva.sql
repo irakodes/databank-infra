@@ -106,7 +106,7 @@ CREATE INDEX ON "customers" ("lastName", "firstName");
 CREATE UNIQUE INDEX ON "users" ("username");
 CREATE INDEX ON "users" ("customerId");
 CREATE INDEX ON "sessions" ("userId");
-create index on "session" ("ipAddress");
+create index on "sessions" ("ipAddress");
 CREATE UNIQUE INDEX ON "vendor" ("accountNumber");
 CREATE INDEX ON "vendor" ("name");
 CREATE INDEX ON "assets" ("customerId");
